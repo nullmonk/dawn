@@ -1,14 +1,14 @@
 {
-  "name": "frida-agent-example",
+  "name": "dawn",
   "version": "1.0.0",
-  "description": "Example Frida agent written in TypeScript",
+  "description": "The ultimate android frida-agent starting point",
   "private": true,
   "main": "agent/index.ts",
   "scripts": {
     "prepare": "npm run build",
     "build": "npm run c && frida-compile agent/index.ts -o _agent.js -c",
     "watch": "nodemon --watch agent/ -e 'c,h' -x \"npm run c\" & frida-compile agent/index.ts -o _agent.js -w",
-    "c": "for i in \"agent\"/*\".c\"; do [ -f $i ] && ((echo 'const code = `' && cat $i &&  echo -e \"\\`;\\nexport default code\") > $i.js) || echo \"No .c files to convert\"; done"
+    "c": "bash scripts/build.sh"
   },
   "devDependencies": {
     "@types/frida-gum": "^18.5.1",

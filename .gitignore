@@ -1,0 +1,11 @@
+
+build/
+.venv
+package-lock.json
+main
+_agent.js
+*.c.js
+*.config
+*.so
+*frida-core*
+agent/httptoolkit/config.js
